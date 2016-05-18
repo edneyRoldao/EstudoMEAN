@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title></title>
+		<script type="text/javascript">
+			var contatos = document.querySelector('.conta');
+			var total = 0;
+			var botao = document.querySelector('btn-grava');
+			botao.addEventListener('click', function(event) {
+				total++;
+				contatos.textContent = 'Contatos cadastrados: ' + total;
+			});					
+		</script>
+	</head>
+	<body>
+		<button class="btn-grava">Novo</button>
+		<p class="conta"></p>
+	</body>
+</html>

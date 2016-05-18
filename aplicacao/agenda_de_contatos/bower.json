@@ -1,0 +1,15 @@
+{
+  "name": "agenda_de_contatos",
+  "description": "cursoMEAN",
+  "main": "index.js",
+  "authors": [
+    "edneyRoldao <edneyroldao@gmail.com>"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/edneyRoldao/EstudoMEAN",
+  "dependencies": {
+    "angular": "^1.5.5",
+    "angular-route": "^1.5.5",
+    "bootstrap": "^3.3.6"
+  }
+}
