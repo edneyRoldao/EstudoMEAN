@@ -26,4 +26,14 @@ angular.module('agenda_contato').controller('contatosController', function($scop
 	}
 
 	buscarContatos();
+
+	$scope.remover = function(contato) {
+		var promise = Contato.delete({id: contato._id}).$promise;
+		promise.then(buscarContatos).catch(function(erro) {
+				console.log('Não foi possivel obter a lista de contatos');
+				console.log(erro);					
+		});	
+		buscarContatos();
+	};
+
 });

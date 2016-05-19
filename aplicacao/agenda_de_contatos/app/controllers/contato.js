@@ -30,6 +30,13 @@ module.exports = function() {
 		contato ? response.json(contato) : response.status(404).send('Contato não encontrado');
 
 	};
+
+	controller.removerContato = function(request, response) {
+		var idContato = request.params.id;
+		contatos = contatos.filter(function(elemento) {
+			return elemento._id != idContato;
+		});
+	};
 	
 	return controller;
 };
