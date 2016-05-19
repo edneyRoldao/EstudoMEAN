@@ -2,7 +2,7 @@
 	Edney Roldão - 17/05/2016
 	- Registro de módulo principal da alicação do angularJS
 */
-angular.module('agenda_contato', ['ngRoute']).config(function($routeProvider) {
+angular.module('agenda_contato', ['ngRoute', 'ngResource']).config(function($routeProvider) {
 
 	// Definindo a rota do angular que trata a listagem de contatos
 	$routeProvider.when('/contatos', {templateUrl: 'partials/contatos.html', 

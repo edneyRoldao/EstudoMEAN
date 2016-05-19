@@ -10,4 +10,4 @@ http.createServer(app).listen(app.get('port'), function() {
 	console.log('O servidor do Express esta escutando na porta ' + app.get('port'));
 });
 
-/* Podemos rodar esse arquivo no terminal para verifcar o seu funcionamento. */
+/* Temos que rodar esse arquivo pelo terminal para subir o servidor */

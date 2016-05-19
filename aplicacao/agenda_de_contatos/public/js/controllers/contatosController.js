@@ -2,18 +2,28 @@
 	Edney Roldão - 18/05/2016
 	- CONTROLLER - contatosController
 */
-angular.module('agenda_contato').controller('contatosController', function($scope) {
+angular.module('agenda_contato').controller('contatosController', function($scope, $resource) {
 
-	// Lista de contatos em memória (temporário)
-	$scope.listaContatos = [
-		{"_id": 1, "nome": "Contato Angular 01", "email": "contato01@mean.com"},
-		{"_id": 2, "nome": "Contato Angular 02", "email": "contato01@mean.com"},
-		{"_id": 3, "nome": "Contato Angular 03", "email": "contato01@mean.com"},
-		{"_id": 4, "nome": "Contato Angular 04", "email": "contato01@mean.com"}
-	];
+	// Lista de contatos
+	$scope.listaContatos = [];
 
-	$scope.total = 0;
-	$scope.incrementa = function() {
-		$scope.total++;
-	};
+	// Trata o filtro de pesquisa de contatos
+	$scope.filtro = '';
+
+	// Usamos essa variável em maiúsculo para diferenciar o contato do nosso model
+	var Contato = $resource('/contatos/:id');
+
+	function buscarContatos() {
+		Contato.query(
+			function(contatos) {
+				$scope.listaContatos = contatos;
+			},
+			function(erro) {
+				console.log('Não foi possivel obter a lista de contatos');
+				console.log(erro);		
+			}
+ 		);		
+	}
+
+	buscarContatos();
 });
