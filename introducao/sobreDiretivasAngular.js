@@ -24,5 +24,14 @@
 		array declarado em $scope. Gealmente usamos em uma <tr> de uma tabela.
 		-> ocorre um processo semelhando ao forIn do javascript
 
+	- ng-model:
+		Essa é um das principais diretivas do angular, ela vai atuar no processo de two way databind.
+		Ela difine valores em $scope, geralmente utilizada em tags como: input, select e textArea.
+
+	- ng-show e ng-hide:
+		Exibe e escondo valores das tags respactivamente quando o valar da expressão for true
+
+	- ng-href:
+		Esse diretiva garante que o link só funcione depois da AE associada à mesma ter sido avaliada pelo angular
 
 */

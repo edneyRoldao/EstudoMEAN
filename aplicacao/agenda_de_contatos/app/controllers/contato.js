@@ -13,6 +13,7 @@ var contatos = [
 
 module.exports = function() {
 	var controller = {};
+	var ID_CONTATO_INIT = 3;
 
 	controller.listaContatos = function(request, response) {
 		// Nesse caso não vamos renderizar uma página HTML, vamos disponibilizar um json 
@@ -37,6 +38,28 @@ module.exports = function() {
 			return elemento._id != idContato;
 		});
 	};
+
+	controller.salvarContato = function(request, response) {
+		var contato = request.body;
+		contato = contato._id ? atualizarContato(contato) : adicionarContato(contato);
+		response.json(contato);
+	};
+
+	function adicionarContato(contato) {
+		contato._id = ++ID_CONTATO_INIT;
+		contatos.push(contato);
+		return contato;
+	}
+
+	function atualizarContato(contato) {
+		contatos = contatos.map(function(elemento) {
+			if(contato._id == elemento._id) 
+				elemento = contato;
+
+			return elemento; 
+		});
+		return contato;
+	}
 	
 	return controller;
 };

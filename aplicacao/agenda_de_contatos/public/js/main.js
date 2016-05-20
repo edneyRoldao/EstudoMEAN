@@ -12,6 +12,9 @@ angular.module('agenda_contato', ['ngRoute', 'ngResource']).config(function($rou
 	$routeProvider.when('/contato/:contatoId', {templateUrl: 'partials/contato.html', 
 									       controller: 'contatoController'});
 
+	$routeProvider.when('/contato', {templateUrl: 'partials/contato.html', 
+									       controller: 'contatoController'});
+
 	// Definando uma rota padrão caso a rota digitada não existir
 	$routeProvider.otherwise({redirectTo: '/contatos'});
 
