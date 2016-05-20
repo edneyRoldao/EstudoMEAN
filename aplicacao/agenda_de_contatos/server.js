@@ -5,6 +5,7 @@
 
 var http = require('http');
 var app = require('./config/express')();
+require('./config/database.js')('mongodb://localhost/agenda');
 
 http.createServer(app).listen(app.get('port'), function() {
 	console.log('O servidor do Express esta escutando na porta ' + app.get('port'));

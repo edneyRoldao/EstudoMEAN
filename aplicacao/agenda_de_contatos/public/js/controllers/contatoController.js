@@ -2,10 +2,7 @@
 	Edney Roldão - 18/05/2016
 	- CONTROLLER - contatoController
 */
-angular.module('agenda_contato').controller('contatoController', function($scope, $routeParams, $resource) {
-
-	// Aqui contatos/:id pois é no lado do servidor.
-	var Contato = $resource('/contatos/:id');
+angular.module('agenda_contato').controller('contatoController', function($scope, $routeParams, Contato) {
 
 	if($routeParams.contatoId) {
 		Contato.get({id: $routeParams.contatoId}, function(contato) {

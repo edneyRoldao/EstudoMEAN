@@ -2,16 +2,13 @@
 	Edney Roldão - 18/05/2016
 	- CONTROLLER - contatosController
 */
-angular.module('agenda_contato').controller('contatosController', function($scope, $resource) {
+angular.module('agenda_contato').controller('contatosController', function($scope, Contato) {
 
 	// Lista de contatos
 	$scope.listaContatos = [];
 
 	// Trata o filtro de pesquisa de contatos
 	$scope.filtro = '';
-
-	// Usamos essa variável em maiúsculo para diferenciar o contato do nosso model
-	var Contato = $resource('/contatos/:id');
 
 	$scope.mensagem = {texto: ''};
 
