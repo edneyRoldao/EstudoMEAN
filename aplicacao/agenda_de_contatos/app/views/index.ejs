@@ -9,13 +9,24 @@
 		<link rel="stylesheet" type="text/css" href="css/appAgenda.css">		
 	</head>
 	<body class="container">
+		
+
+	<%if (usuarioLogado.length > 0) { %>
+		<div class="text-right">
+			<p>
+				Logado como: <span id="usuario-logado"> <%=usuarioLogado %> </span>
+				<a href="/logout">Logout</a>
+			</p>
+		</div>		
+	<% } %>
 
 		<div ng-view></div>
 		<script src="lib/angular/angular.js"></script>
 		<script src="lib/angular-route/angular-route.js"></script>
 		<script src="lib/angular-resource/angular-resource.js"></script>		
 		<script src="js/main.js"></script>
-		<script src="js/services/contatoService.js"></script>				
+		<script src="js/services/contatoService.js"></script>
+		<script src="js/services/InterceptorService.js"></script>						
 		<script src="js/controllers/contatosController.js"></script>
 		<script src="js/controllers/contatoController.js"></script>
 

@@ -24,4 +24,8 @@ angular.module('agenda_contato').controller('contatoController', function($scope
 		});
 	};
 
+	Contato.query(function(contatos) {
+		$scope.contatos = contatos;
+	});
+
 });

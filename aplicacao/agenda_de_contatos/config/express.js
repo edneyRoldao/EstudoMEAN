@@ -10,6 +10,11 @@ var load = require('express-load');
 // Importando o conversor de verbos HTTP
 var bodyParser = require('body-parser');
 
+// Importando os middleware's de cookie, sessão e inicialização
+var cookieParser = require('cookie-parser');
+var session = require('express-session');
+var passport = require('passport');
+
 // Importando o módulo do express do nodeJS
 var express = require('express');
 
@@ -21,7 +26,6 @@ var express = require('express');
 module.exports = function() {
 	
 	var app = express();
-
 
 	// Configuração de ambiente (porta do servidor)
 	app.set('port', 3000);
@@ -39,6 +43,10 @@ module.exports = function() {
 	app.use(bodyParser.json());
 	app.use(require('method-override')());
 
+	app.use(cookieParser());
+	app.use(session({secret: "joao das couves", resave: true, saveUninitialized: true}));
+	app.use(passport.initialize());
+	app.use(passport.session());
 
 	// Passando a instancia do express para nosso arquivo de configuração de rotas
 	// home(app);	-	com o uso do express-load essa linha deve ser modificada como abaixo
