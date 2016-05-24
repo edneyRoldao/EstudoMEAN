@@ -15,6 +15,9 @@ var cookieParser = require('cookie-parser');
 var session = require('express-session');
 var passport = require('passport');
 
+// API de segurando que trata as informações presentes no header.
+var helmet = require('helmet');
+
 // Importando o módulo do express do nodeJS
 var express = require('express');
 
@@ -48,15 +51,30 @@ module.exports = function() {
 	app.use(passport.initialize());
 	app.use(passport.session());
 
+	// Tratamento do header
+	// app.use(helmet.xframe());
+	app.use(helmet.xssFilter());
+	// app.use(helmet.nosniff());
+	app.disable('x-powered-by');
+
+
 	// Passando a instancia do express para nosso arquivo de configuração de rotas
 	// home(app);	-	com o uso do express-load essa linha deve ser modificada como abaixo
-	load('models', {cwd: 'app'}).then('controllers').then('routes').into(app);
+	load('models', {cwd: 'app'})
+		.then('controllers')
+		.then('routes')
+		.into(app);
 	/*
 		Obs:
 			01: Dinamicamente a função into adiciona na instancia do express propriedades que apontam para esses módulos 
 			02: Precisamos carregar as pastas seguindo a ordem: models, controllers e routes
 			03: o parâmetro {cwd: 'app'}, é para mudar a pasta padrão, pois a função procura na raíz, só que ela deve procurar em /app 
 	*/
+
+	// Se nenhuma rota atender, redirecionamos para página 404
+	app.get('*', function(request, response) {
+		response.status(404).render('404');
+	});
 
 	return app;
 };

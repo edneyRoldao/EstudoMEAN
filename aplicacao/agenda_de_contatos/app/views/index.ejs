@@ -4,9 +4,13 @@
 		<title>Bem Vindo Agenda de Contatos</title>
 		<meta name="viewport" content="width=device-width">
 		<meta charset="utf-8">
+
+		<!-- build:css css/index.min.css -->
 		<link rel="stylesheet" type="text/css" href="lib/bootstrap/dist/css/bootstrap.css">
 		<link rel="stylesheet" type="text/css" href="lib/bootstrap/dist/css/bootstrap-theme.css">
-		<link rel="stylesheet" type="text/css" href="css/appAgenda.css">		
+		<link rel="stylesheet" type="text/css" href="css/appAgenda.css">
+		<!-- endbuild -->
+
 	</head>
 	<body class="container">
 		
@@ -21,6 +25,8 @@
 	<% } %>
 
 		<div ng-view></div>
+
+		<!-- build:js js/index.min.js -->
 		<script src="lib/angular/angular.js"></script>
 		<script src="lib/angular-route/angular-route.js"></script>
 		<script src="lib/angular-resource/angular-resource.js"></script>		
@@ -29,6 +35,7 @@
 		<script src="js/services/InterceptorService.js"></script>						
 		<script src="js/controllers/contatosController.js"></script>
 		<script src="js/controllers/contatoController.js"></script>
+		<!-- endbuild -->
 
 	</body>
 </html>
