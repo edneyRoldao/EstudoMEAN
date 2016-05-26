@@ -3,5 +3,6 @@
 .DS_Store?
 node_modules/
 public/lib/
+aplicacao\agenda_de_contatos\public\lib\*
 dist/
 scripts/
