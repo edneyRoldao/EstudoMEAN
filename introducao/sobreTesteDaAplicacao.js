@@ -49,6 +49,18 @@
 
 
 	- PROTRACTOR: Ferramenta específica para testes e2e em aplicações com angularJS que facilita a utilização
-				  do selenium.   
+				  do selenium. 
+
+				  -> Sua criação foi motivada devido o selelium suportar apenas requisições síncronas, porém como estamos
+				     trabalhando com requisições assíncronas, e o protractor nos fornece funcionalidades que as suportam.
+
+				  -> Instalar global: 	npm install protractor -g
+
+				  -> Agora precisamos instalar e atualizar o Selenium com o comando: 	webdriver-manager update --standalone
+
+				  -> OBS: Como o selenium é desenvolvido em Java, precisamos do JDK instalado para o selenium e protractor funcionarem
+
+				  -> SUBIR O SERVIDOR STANDALONE DO SELENIUM:
+				  		webdriver-manager start		(podemos ver no brower em: http://localhost:4444/wd/hub)   
 
 */
