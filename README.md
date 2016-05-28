@@ -9,7 +9,6 @@ Inicialmemte, vou seguir e deplicar na íntegra os exemplos apresentados pelo li
 github:<br/> 
 http://github.com/flaviohenriquealmeida/mean-livro-codigo
 
-<br/>
 <hr/>
 <b>Status do build do projeto no travis</b>
 <br/>
