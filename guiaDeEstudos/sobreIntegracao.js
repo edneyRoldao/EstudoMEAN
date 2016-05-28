@@ -18,6 +18,7 @@
 			depois...	npm install phantomjs-prebuilt --save-dev
 
 		- EXECUTANDO O KARMA PELO PHANTOM_JS
-			pela linha de comando na raíz do projeto: 	karma start config/karma.config.js --single-run --browsers PhantomJS
+			pela linha de comando na raíz do projeto:
+				-> karma start config/karma.config.js --single-run --browsers PhantomJS
 
 */
