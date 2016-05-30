@@ -64,7 +64,10 @@
 				  -> OBS: Como o selenium é desenvolvido em Java, precisamos do JDK instalado para o selenium e protractor funcionarem
 
 				  -> SUBIR O SERVIDOR STANDALONE DO SELENIUM:
-				  		webdriver-manager start		(podemos ver no brower em: http://localhost:4444/wd/hub)
+
+				  			webdriver-manager start
+				  		
+				  			(podemos ver no brower em: http://localhost:4444/wd/hub)
 
 		-> Para iniciar o protractor:
 				protractor config/protractor.js 

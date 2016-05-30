@@ -12,7 +12,7 @@ describe('Página Principal', function () {
 		pagina.visitar();
 	});
 
-	it('Deve testar logado', function() {
+	it('Deve estar logado', function() {
 		pagina.obterUsuarioLogado().then(function(texto) {
 			expect(texto.trim().length).toBeGreaterThan(0);
 		});
