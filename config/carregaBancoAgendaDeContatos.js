@@ -8,10 +8,10 @@ use agenda
 
 // Criando a lista de contatos
 var listaInicial = [
-	{nome: "Edney", email: "edney@gmail.com"},
 	{nome: "Giselle", email: "giselle@gmail.com"},
 	{nome: "Nadine", email: "nadine@gmail.com"},
-	{nome: "Marjorie", email: "marjorie@gmail.com"}
+	{nome: "Marjorie", email: "marjorie@gmail.com"},
+	{nome: "Edney", email: "edney@gmail.com"}
 ];
 
 // Inserindo 
