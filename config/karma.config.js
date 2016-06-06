@@ -22,7 +22,9 @@ module.exports = function(config) {
         'public/js/main.js',
         'public/js/controllers/**/*.js',
         'public/js/services/**/*.js',
-        'test/spec/**/*Spec.js'
+        'public/js/directives/**/*.js',
+        'test/spec/**/*Spec.js',
+        'public/js/directives/myComponents/*.html'
     ],
 
     // list of files to exclude
@@ -33,8 +35,20 @@ module.exports = function(config) {
     // preprocess matching files before serving them to the browser
     // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
     preprocessors: {
+        'public/js/directives/**/*.html': 'ng-html2js'
     },
 
+    plugins: [
+        'karma-ng-html2js-preprocessor',
+        'karma-chrome-launcher',
+        'karma-phantomjs-launcher',
+        'karma-jasmine'
+    ],
+
+    ngHtml2JsPreprocessor: {
+        moduleName: 'templates',
+        stripPrefix: '.*/public/'
+    },
 
     // test results reporter to use
     // possible values: 'dots', 'progress'

@@ -2,7 +2,7 @@
 	Edney Roldão - 17/05/2016
 	- Registro de módulo principal da alicação do angularJS
 */
-angular.module('agenda_contato', ['ngRoute', 'ngResource']).config(function($routeProvider, $httpProvider) {
+angular.module('agenda_contato', ['ngRoute', 'ngResource', 'meusComponentes']).config(function($routeProvider, $httpProvider) {
 
 	// Adicionando interceptor
 	$httpProvider.interceptors.push('meuInterceptor');

@@ -18,7 +18,8 @@ angular.module('agenda_contato').controller('contatoController', function($scope
 	$scope.salvar = function() {
 		$scope.contato.$save().then(function() {
 			$scope.mensagem = {sucesso: 'Contato salvo com sucesso !'};
-			$scope.contato = new Contato();						
+			$scope.contato = new Contato();
+			$scope.$broadcast('contatoSalvo');					
 		}).catch(function(erro) {
 			$scope.mensagem = {texto: 'não foi possível salvar o contato.'};			
 		});
