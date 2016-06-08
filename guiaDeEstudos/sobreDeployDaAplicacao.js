@@ -17,6 +17,8 @@
 				-> no mac: sudo gem install rhc
 				-> no windows: gem install rhc
 
+				Depois de instalado, precisamos configurar o openshift pelo comando rhc setup
+
 	- PaaS: Uma PaaS facilita o deploy da aplicação reduzindo a complexidade envolvida no processo, inclusive
 		    fornecendo ferramentas que lidam com detalhes de infraestrutura.
 
